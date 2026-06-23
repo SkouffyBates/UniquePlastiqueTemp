@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unique Plastique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/index.css">
+</head>
+<body>
+<div id="navbar"></div>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <a href="#">Accueil</a>
+  <span>›</span>
+  <a href="#">Pinces à cheveux</a>
+  <span>›</span>
+  <strong>Moyennes</strong>
+</div>
+
+<!-- Collection Layout -->
+<div class="collection-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-title">Filtrer</div>
+
+    <div class="filter-group">
+      <span class="filter-group-label">Catégorie</span>
+      <a href="#" class="cat-link active">Moyennes <span class="cat-count">10</span></a>
+      <a href="#" class="cat-link">Petites <span class="cat-count">6</span></a>
+      <a href="#" class="cat-link">Lots de pinces <span class="cat-count">4</span></a>
+    </div>
+
+    <div class="filter-group">
+      <span class="filter-group-label">Couleur</span>
+      <div class="color-swatches">
+        <div class="swatch active" style="background:#18181A" title="Noire"></div>
+        <div class="swatch" style="background:#F5F5F0; border:1.5px solid #ddd" title="Blanche"></div>
+        <div class="swatch" style="background:#3B6E4E" title="Verte"></div>
+        <div class="swatch" style="background:#8B4513" title="Brune"></div>
+        <div class="swatch" style="background:#E8B4A0" title="Baby pink"></div>
+        <div class="swatch" style="background:#FF6B2B" title="Orange"></div>
+        <div class="swatch" style="background:#2C3E6B" title="Bleu marin"></div>
+        <div class="swatch" style="background:#8B1A1A" title="Rouge"></div>
+        <div class="swatch" style="background:#5C4033" title="Charbon"></div>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <span class="filter-group-label">Disponibilité</span>
+      <label class="filter-check">
+        <input type="checkbox" checked>
+        <span class="check-box">✓</span>
+        En stock
+      </label>
+      <label class="filter-check">
+        <input type="checkbox">
+        <span class="check-box">✓</span>
+        En rupture
+      </label>
+    </div>
+
+    <div class="filter-group">
+      <span class="filter-group-label">Prix (CAD)</span>
+      <div class="price-range">
+        <input type="number" class="price-input" placeholder="0" value="0">
+        <span class="price-sep">–</span>
+        <input type="number" class="price-input" placeholder="16.50" value="16.50">
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <span class="filter-group-label">Collection</span>
+      <label class="filter-check">
+        <input type="checkbox">
+        <span class="check-box">✓</span>
+        Édition limitée
+      </label>
+      <label class="filter-check">
+        <input type="checkbox">
+        <span class="check-box">✓</span>
+        Collection d'été
+      </label>
+      <label class="filter-check">
+        <input type="checkbox">
+        <span class="check-box">✓</span>
+        Classiques
+      </label>
+    </div>
+
+    <button class="clear-btn">✕ Effacer les filtres</button>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="collection-main">
+
+    <!-- Header + Sort -->
+    <div class="collection-header reveal">
+      <div>
+        <h2>Pinces moyennes</h2>
+        <p class="collection-count">10 articles</p>
+      </div>
+      <div class="sort-row">
+        <select class="sort-select">
+          <option>En vedette</option>
+          <option>Meilleures ventes</option>
+          <option>Prix : bas → élevé</option>
+          <option>Prix : élevé → bas</option>
+          <option>Nouveautés</option>
+        </select>
+        <div class="view-toggle">
+          <button class="view-btn active" id="gridBtn" title="Grille 3 col">⊞</button>
+          <button class="view-btn" id="listBtn" title="Grille 2 col">▤</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active filters -->
+    <div class="active-filters reveal">
+      <div class="filter-tag">Noire <span>×</span></div>
+      <div class="filter-tag">En stock <span>×</span></div>
+    </div>
+
+    <!-- Summer collections band -->
+    <div class="featured-band reveal">
+      <div class="featured-band-text">
+        <strong>Collections d'été 2026 🌿</strong>
+        <p>Lots exclusifs à prix réduit — jusqu'à 40 % de rabais</p>
+      </div>
+      <div class="sale-chips">
+        <div class="sale-chip">Premium — 9 pour 5 ✨</div>
+        <div class="sale-chip">Tropicale — 5 pour 3 🌺</div>
+        <div class="sale-chip">Daisy — 5 pour 3 🌼</div>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid" id="productGrid">
+
+      <!-- Card 1: Mystère - WIDE featured -->
+      <div class="product-card wide reveal" onclick="addToCart('Pinces mystères')">
+        <div class="card-img">
+          <div class="card-img-emoji">🎁</div>
+          <div class="card-color-stripe" style="background: linear-gradient(90deg, #E8B4A0, #C5E54E, #2C3E6B, #FF6B2B, #18181A)"></div>
+          <div class="card-badges">
+            <span class="badge badge-limited">‼ Édition limitée</span>
+          </div>
+          <button class="card-wish" title="Ajouter aux favoris">🤍</button>
+        </div>
+        <div class="card-body">
+          <p class="card-meta">Édition limitée · Surprise</p>
+          <h3 class="card-name">Pinces mystères — Surprise colorée</h3>
+          <p style="font-size:.88rem;color:var(--muted);line-height:1.65;margin-bottom:16px;">Laissez-vous surprendre ! Une sélection de couleurs choisies au hasard parmi nos tons les plus populaires. Chaque commande est une découverte.</p>
+          <div class="card-footer">
+            <div>
+              <span class="card-price">16,50 $ CAD</span>
+            </div>
+            <button class="card-add" onclick="event.stopPropagation();addToCart('Pinces mystères')">+ Panier</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="product-card reveal" onclick="addToCart('Bleu Marin')">
+        <div class="card-img">
+          <div class="card-img-emoji">🌊</div>
+          <div class="card-color-stripe" style="background:#2C3E6B"></div>
+          <div class="card-badges">
+            <span class="badge badge-limited">‼ Édition limitée</span>
+          </div>
+          <button class="card-wish">🤍</button>
+          <div class="card-reveal">
+            <div>
+              <strong>Bleu Marin</strong>
+              <p>Faite à partir de contenants HDPE recyclés. Ressort haute qualité. Tenue parfaite toute la journée.</p>
+            </div>
+          </div>
+          <button class="card-quick-add" onclick="event.stopPropagation();addToCart('Bleu Marin')">+ Ajouter</button>
+        </div>
+        <div class="card-body">
+          <p class="card-meta">Édition limitée</p>
+          <h3 class="card-name">Bleu Marin — Civière</h3>
+          <div class="card-footer">
+            <span class="card-price">15,99 $ CAD</span>
+            <button class="card-add" onclick="event.stopPropagation();addToCart('Bleu Marin')">+ Panier</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="product-card reveal" onclick="addToCart('Orange')">
+        <div class="card-img">
+          <div class="card-img-emoji">🍊</div>
+          <div class="card-color-stripe" style="background:#FF6B2B"></div>
+          <div class="card-badges">
+            <span class="badge badge-limited">‼ Édition limitée</span>
+          </div>
+          <button class="card-wish">🤍</button>
+          <div class="card-reveal">
+            <div>
+              <strong>Orange vif</strong>
+              <p>Un coloris solaire et énergisant. Plastique recyclé HDPE, aucun colorant ajouté.</p>
+            </div>
+          </div>
+          <button class="card-quick-add" onclick="event.stopPropagation();addToCart('Orange')">+ Ajouter</button>
+        </div>
+        <div class="card-body">
+          <p class="card-meta">Édition limitée</p>
+          <h3 class="card-name">Orange — Édition limitée</h3>
+          <div class="card-footer">
+            <span class="card-price">14,99 $ CAD</span>
+            <button class="card-add" onclick="event.stopPropagation();addToCart('Orange')">+ Panier</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="product-card reveal" onclick="addToCart('Baby Pink')">
+        <div class="card-img">
+          <div class="card-img-emoji">🌸</div>
+          <div class="card-color-stripe" style="background:#E8B4A0"></div>
+          <div class="card-badges">
+            <span class="badge badge-limited">‼ Édition limitée</span>
+          </div>
+          <button class="card-wish">🤍</button>
+          <div class="card-reveal">
+            <div>
+              <strong>Baby Pink</strong>
+              <p>Douceur pastel, teinte naturelle sans teinture artificielle. Issue de plastique recyclé.</p>
+            </div>
+          </div>
+          <button class="card-quick-add" onclick="event.stopPropagation();addToCart('Baby Pink')">+ Ajouter</button>
+        </div>
+        <div class="card-body">
+          <p class="card-meta">Édition limitée</p>
+          <h3 class="card-name">Baby Pink — Édition limitée</h3>
+          <div class="card-footer">
+            <span class="card-price">14,99 $ CAD</span>
+            <button class="card-add" onclick="event.stopPropagation();addToCart('Baby Pink')">+ Panier</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="product-card reveal" onclick="addToCart('Rouge Pro')">
+        <div class="card-img">
+          <div class="card-img-emoji">🍒</div>
+          <div class="card-color-stripe" style="background:#8B1A1A"></div>
+          <div class="card-badges">
+            <span class="badge badge-new">✦ Nouveau</span>
+          </div>
+          <button class="card-wish">🤍</button>
+          <div class="card-reveal">
+            <div>
+              <strong>Rouge Pro</strong>
+              <p>Nouveau coloris intense. Ton profond, tenue professionnelle. HDPE 100 % recyclé.</p>
+            </div>
+          </div>
+          <button class="card-quick-add" onclick="event.stopPropagation();addToCart('Rouge Pro')">+ Ajouter</button>
+        </div>
+        <div class="card-body">
+          <p class="card-meta">Nouvelle arrivée</p>
+          <h3 class="card-name">Rouge Pro — Nouvelle Arrivée</h3>
+          <div class="card-footer">
+            <span class="card-price">14,99 $ CAD</span>
+            <button class="card-add" onclick="event.stopPropagation();addToCart('Rouge Pro')">+ Panier</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="product-card reveal" onclick="addToCart('Charbon')">
+        <div class="card-img">
+          <div class="card-img-emoji">🪨</div>
+          <div class="card-color-stripe" style="background:#3a3a3a"></div>
+          <button class="card-wish">🤍</button>
+          <div class="card-reveal">
+            <div>
+              <strong>Charbon</strong>
+              <p>Le gris anthracite indémodable. Polyvalent, élégant, 100 % plastique recyclé.</p>
+            </div>
+          </div>
+          <button class="card-quick-add" onclick="event.stopPropagation();addToCart('Charbon')">+ Ajouter</button>
+        </div>
+        <div class="card-body">
+          <p class="card-meta">Classique</p>
+          <h3 class="card-name">Charbon — Classique</h3>
+          <div class="card-footer">
+            <span class="card-price">14,99 $ CAD</span>
+            <button class="card-add" onclick="event.stopPropagation();addToCart('Charbon')">+ Panier</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="product-card reveal" onclick="addToCart('Brun')">
+        <div class="card-img">
+          <div class="card-img-emoji">🌰</div>
+          <div class="card-color-stripe" style="background:#8B4513"></div>
+          <button class="card-wish">🤍</button>
+          <div class="card-reveal">
+            <div>
+              <strong>Brun naturel</strong>
+              <p>Ton chaud, inspiré du bois. Chaque lot a sa propre nuance — aucune pièce identique.</p>
+            </div>
+          </div>
+          <button class="card-quick-add" onclick="event.stopPropagation();addToCart('Brun')">+ Ajouter</button>
+        </div>
+        <div class="card-body">
+          <p class="card-meta">Classique</p>
+          <h3 class="card-name">Brun — Classique</h3>
+          <div class="card-footer">
+            <span class="card-price">14,99 $ CAD</span>
+            <button class="card-add" onclick="event.stopPropagation();addToCart('Brun')">+ Panier</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="product-card reveal" onclick="addToCart('Noire')">
+        <div class="card-img">
+          <div class="card-img-emoji">🖤</div>
+          <div class="card-color-stripe" style="background:#18181A"></div>
+          <button class="card-wish">🤍</button>
+          <div class="card-reveal">
+            <div>
+              <strong>Noire</strong>
+              <p>Le classique absolu. Intemporel, fort, durable. Recyclé à 100 % depuis votre quotidien.</p>
+            </div>
+          </div>
+          <button class="card-quick-add" onclick="event.stopPropagation();addToCart('Noire')">+ Ajouter</button>
+        </div>
+        <div class="card-body">
+          <p class="card-meta">Classique</p>
+          <h3 class="card-name">Noire — La classique</h3>
+          <div class="card-footer">
+            <span class="card-price">14,99 $ CAD</span>
+            <button class="card-add" onclick="event.stopPropagation();addToCart('Noire')">+ Panier</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 9 -->
+      <div class="product-card reveal" onclick="addToCart('Blanche')">
+        <div class="card-img">
+          <div class="card-img-emoji">🤍</div>
+          <div class="card-color-stripe" style="background:#E8E8E0; border-top:1px solid #ddd"></div>
+          <button class="card-wish">🤍</button>
+          <div class="card-reveal">
+            <div>
+              <strong>Blanche</strong>
+              <p>Épurée, lumineuse, minimale. Issue de contenants plastiques blancs récupérés.</p>
+            </div>
+          </div>
+          <button class="card-quick-add" onclick="event.stopPropagation();addToCart('Blanche')">+ Ajouter</button>
+        </div>
+        <div class="card-body">
+          <p class="card-meta">Classique</p>
+          <h3 class="card-name">Blanche — Classique</h3>
+          <div class="card-footer">
+            <span class="card-price">14,99 $ CAD</span>
+            <button class="card-add" onclick="event.stopPropagation();addToCart('Blanche')">+ Panier</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 10 -->
+      <div class="product-card reveal" onclick="addToCart('Verte')">
+        <div class="card-img">
+          <div class="card-img-emoji">🌿</div>
+          <div class="card-color-stripe" style="background:#3B6E4E"></div>
+          <button class="card-wish">🤍</button>
+          <div class="card-reveal">
+            <div>
+              <strong>Verte</strong>
+              <p>Le vert forêt qui rappelle nos origines. 100 % recyclé, fièrement fabriqué à Lévis.</p>
+            </div>
+          </div>
+          <button class="card-quick-add" onclick="event.stopPropagation();addToCart('Verte')">+ Ajouter</button>
+        </div>
+        <div class="card-body">
+          <p class="card-meta">Classique</p>
+          <h3 class="card-name">Verte — Classique</h3>
+          <div class="card-footer">
+            <span class="card-price">14,99 $ CAD</span>
+            <button class="card-add" onclick="event.stopPropagation();addToCart('Verte')">+ Panier</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /product-grid -->
+
+    <!-- Pagination -->
+    <div class="pagination reveal">
+      <button class="page-btn active">1</button>
+      <button class="page-btn">2</button>
+      <button class="page-btn">›</button>
+    </div>
+
+  </main>
+</div>
+
+<!-- Trust Strip -->
+<div class="trust-strip">
+  <div class="trust-item reveal">
+    <span class="trust-icon">♻️</span>
+    <strong>100 % recyclé</strong>
+    <span>HDPE local, aucun plastique vierge</span>
+  </div>
+  <div class="trust-item reveal">
+    <span class="trust-icon">🍁</span>
+    <strong>Fabriqué à Lévis</strong>
+    <span>Artisanat québécois, circuit court</span>
+  </div>
+  <div class="trust-item reveal">
+    <span class="trust-icon">🚚</span>
+    <strong>Livraison incluse</strong>
+    <span>Dès 50 $ d'achat partout au Canada</span>
+  </div>
+  <div class="trust-item reveal">
+    <span class="trust-icon">💚</span>
+    <strong>Chaque pièce est unique</strong>
+    <span>Les couleurs varient selon le lot recyclé</span>
+  </div>
+</div>
+
+<!-- Story Section -->
+<div class="story-section">
+  <div class="story-visual reveal">
+    ♻️
+  </div>
+  <div class="reveal">
+    <p class="story-eyebrow">Notre mission</p>
+    <h2>Du déchet à l'<em>objet désirable.</em></h2>
+    <p>Chez Unique Plastique, on croit que le meilleur plastique est celui qui existe déjà. On collecte vos pots de pilules, bouteilles de shampoing et contenants HDPE pour les transformer en pinces à cheveux solides, belles, et portées avec fierté.</p>
+    <p>Chaque coloris dépend du plastique disponible ce mois-là. C'est ça, l'économie circulaire : pas de gaspillage, pas de compromis sur la qualité.</p>
+    <a href="#" class="story-link">Notre histoire complète →</a>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">
+        <span class="footer-brand-icon">♻</span>
+        Unique Plastique
+      </div>
+      <p class="footer-desc">Des pinces à cheveux fabriquées à Lévis, Québec, à partir de plastique recyclé. Chaque pièce est unique.</p>
+      <div class="footer-nl">
+        <input type="email" placeholder="Votre courriel">
+        <button>S'inscrire</button>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Boutique</h4>
+      <ul>
+        <li><a href="#">Pinces moyennes</a></li>
+        <li><a href="#">Pinces petites</a></li>
+        <li><a href="#">Lots de pinces</a></li>
+        <li><a href="#">Collections d'été</a></li>
+        <li><a href="#">Campagnes financement</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Partenaires</h4>
+      <ul>
+        <li><a href="#">Devenir distributeur</a></li>
+        <li><a href="#">Devenir fournisseur</a></li>
+        <li><a href="#">Programme ♻️</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Aide</h4>
+      <ul>
+        <li><a href="#">À propos</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Politique de retour</a></li>
+        <li><a href="#">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Unique Plastique · Lévis, Québec 🍁</p>
+    <p>Commerce électronique propulsé par Shopify</p>
+  </div>
+</footer>
+
+<!-- Toast notification -->
+<div class="toast" id="toast">
+  <span class="toast-icon">✅</span>
+  <span id="toastMsg">Ajouté au panier !</span>
+</div>
+
+<script src="assets/js/navbar.js"></script>
+<script>
+// Cart counter
+let cartCount = 0;
+const cartEl = document.getElementById('cartCount');
+const toastEl = document.getElementById('toast');
+const toastMsg = document.getElementById('toastMsg');
+
+function addToCart(name) {
+  cartCount++;
+  cartEl.textContent = cartCount;
+  toastMsg.textContent = `"${name}" ajouté au panier !`;
+  toastEl.classList.add('show');
+  setTimeout(() => toastEl.classList.remove('show'), 2800);
+}
+
+// View toggle
+document.getElementById('gridBtn').addEventListener('click', () => {
+  document.getElementById('productGrid').classList.remove('two-col');
+  document.getElementById('gridBtn').classList.add('active');
+  document.getElementById('listBtn').classList.remove('active');
+});
+document.getElementById('listBtn').addEventListener('click', () => {
+  document.getElementById('productGrid').classList.add('two-col');
+  document.getElementById('listBtn').classList.add('active');
+  document.getElementById('gridBtn').classList.remove('active');
+});
+
+// Color swatch selection
+document.querySelectorAll('.swatch').forEach(s => {
+  s.addEventListener('click', () => {
+    document.querySelectorAll('.swatch').forEach(x => x.classList.remove('active'));
+    s.classList.add('active');
+  });
+});
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 60);
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+reveals.forEach(el => obs.observe(el));
+
+// Wishlist toggle
+document.querySelectorAll('.card-wish').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    btn.textContent = btn.textContent === '🤍' ? '❤️' : '🤍';
+  });
+});
+
+// Filter tag removal
+document.querySelectorAll('.filter-tag').forEach(tag => {
+  tag.addEventListener('click', () => {
+    tag.style.transform = 'scale(0)';
+    tag.style.opacity = '0';
+    tag.style.transition = 'all .2s';
+    setTimeout(() => tag.remove(), 200);
+  });
+});
+</script>
+</body>
+</html>
