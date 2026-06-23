@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const homePages = ['acceuil.html', 'index.html', ''];
 
   navbarContainer.innerHTML = `
-    <div class="bar">🚚 Livraison gratuite dès 50 $ · Fabriqué à Lévis, Québec 🍁</div>
+    <div class="bar">🚚 Livraison gratuite dès 50 $ · Fabriqué au Québec ⚜️</div>
     <nav>
       <a href="index.html" class="nav-logo">
         <span class="nav-logo-icon"><img src="assets/images/logo_UNIQUEPLASTIQUE.png" alt="Unique Plastique"></span>
