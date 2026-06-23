@@ -10,12 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
   navbarContainer.innerHTML = `
     <div class="bar">🚚 Livraison gratuite dès 50 $ · Fabriqué à Lévis, Québec 🍁</div>
     <nav>
-      <a href="Acceuil.html" class="nav-logo">
+      <a href="index.html" class="nav-logo">
         <span class="nav-logo-icon"><img src="assets/images/logo_UNIQUEPLASTIQUE.png" alt="Unique Plastique"></span>
         <span>Unique Plastique</span>
       </a>
       <ul class="nav-links">
-        <li><a href="Acceuil.html" data-page="acceuil.html">Accueil</a></li>
+        <li><a href="index.html" data-page="acceuil.html">Accueil</a></li>
         <li><a href="pinces.html" data-page="pinces.html" class="active">Pinces à cheveux ▾</a></li>
         <li><a href="#">Fournisseur / Distributeur ♻️</a></li>
         <li><a href="#">Campagnes</a></li>
